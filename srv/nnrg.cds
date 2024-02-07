@@ -120,9 +120,9 @@ annotate nnrg.Business with @(
     UI.Facets : [
         {
             $Type : 'UI.ReferenceFacet',
-            ID : 'BusinessInfoFacet',
-            Label : 'BuisinessInformation',
-            Target : '@UI.FieldGroup#BusinessInformation',
+            ID : 'BusinessPartnerInfoFacet',
+            Label : 'BuisinessPartnerInformation',
+            Target : '@UI.FieldGroup#BusinessPartnerInformation',
         },
         /*
         {
@@ -166,7 +166,7 @@ annotate nnrg.States with @(
     ],
 
 );
-annotate nnrg.Business with {
+annotate nnrg.BusinessPartner  with {
     state @(
         Common.Text:state.description,
         Common.TextArrangement: #TextOnly,
