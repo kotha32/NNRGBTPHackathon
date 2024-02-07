@@ -1,5 +1,5 @@
 
-using from './businesspartner/annotations';
+using from './business/annotations';
 
 using from './store/annotations';
 
