@@ -1,7 +1,7 @@
 {
   "_version": "1.59.0",
   "sap.app": {
-    "id": "business",
+    "id": "stock",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,11 +13,11 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:lrop",
       "version": "1.12.3",
-      "toolsId": "1b65b6f3-8717-4039-871e-12e18b8faa88"
+      "toolsId": "31262c94-b8fe-41ac-a8ad-bf60f9c23bf2"
     },
     "dataSources": {
       "mainService": {
-        "uri": "/odata/v4/nnrg/",
+        "uri": "/odata/v4/store-db/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -61,7 +61,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "business.i18n.i18n"
+          "bundleName": "stock.i18n.i18n"
         }
       },
       "": {
@@ -87,43 +87,42 @@
       "routes": [
         {
           "pattern": ":?query:",
-          "name": "BusinessPartnerList",
-          "target": "BusinessPartnerList"
+          "name": "StockList",
+          "target": "StockList"
         },
         {
-          "pattern": "BusinessPartner({key}):?query:",
-          "name": "BusinessPartnerObjectPage",
-          "target": "BusinessPartnerObjectPage"
+          "pattern": "Stock({key}):?query:",
+          "name": "StockObjectPage",
+          "target": "StockObjectPage"
         }
       ],
       "targets": {
-        "BusinessPartnerList": {
+        "StockList": {
           "type": "Component",
-          "id": "BusinessPartnerList",
+          "id": "StockList",
           "name": "sap.fe.templates.ListReport",
           "options": {
             "settings": {
-              "initialLoad": "Enabled",
-              "contextPath": "/BusinessPartner",
+              "contextPath": "/Stock",
               "variantManagement": "Page",
               "navigation": {
-                "BusinessPartner": {
+                "Stock": {
                   "detail": {
-                    "route": "BusinessPartnerObjectPage"
+                    "route": "StockObjectPage"
                   }
                 }
               }
             }
           }
         },
-        "BusinessPartnerObjectPage": {
+        "StockObjectPage": {
           "type": "Component",
-          "id": "BusinessPartnerObjectPage",
+          "id": "StockObjectPage",
           "name": "sap.fe.templates.ObjectPage",
           "options": {
             "settings": {
               "editableHeaderContent": false,
-              "contextPath": "/BusinessPartner"
+              "contextPath": "/Stock"
             }
           }
         }

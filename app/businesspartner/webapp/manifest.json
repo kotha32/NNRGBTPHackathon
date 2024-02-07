@@ -1,7 +1,7 @@
 {
   "_version": "1.59.0",
   "sap.app": {
-    "id": "store",
+    "id": "businesspartner",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,7 +13,7 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:lrop",
       "version": "1.12.3",
-      "toolsId": "4c350151-74b1-4848-8ec1-d1be78b8f7ad"
+      "toolsId": "953f713f-52d5-4d5a-b71a-a595938e799a"
     },
     "dataSources": {
       "mainService": {
@@ -61,7 +61,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "store.i18n.i18n"
+          "bundleName": "businesspartner.i18n.i18n"
         }
       },
       "": {
@@ -86,43 +86,64 @@
       "routes": [
         {
           "pattern": ":?query:",
-          "name": "StoreList",
-          "target": "StoreList"
+          "name": "BuisinessPartnerList",
+          "target": "BuisinessPartnerList"
         },
         {
-          "pattern": "Store({key}):?query:",
-          "name": "StoreObjectPage",
-          "target": "StoreObjectPage"
+          "pattern": "BuisinessPartner({key}):?query:",
+          "name": "BuisinessPartnerObjectPage",
+          "target": "BuisinessPartnerObjectPage"
         }
       ],
       "targets": {
-        "StoreList": {
+        "BuisinessPartnerList": {
           "type": "Component",
-          "id": "StoreList",
+          "id": "BuisinessPartnerList",
           "name": "sap.fe.templates.ListReport",
           "options": {
             "settings": {
-              "initialLoad": "Enabled", 
-              "contextPath": "/Store",
+              "initialLoad": "Enabled",
+              "contextPath": "/BuisinessPartner",
               "variantManagement": "Page",
               "navigation": {
-                "Store": {
+                "BuisinessPartner": {
                   "detail": {
-                    "route": "StoreObjectPage"
+                    "route": "BuisinessPartnerObjectPage"
+                  }
+                }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "actions": {
+                    "BusinessPartnerListExt": {
+                      "press": "businesspartner.ext.businessPartnerListExt.BusinessPartnerListExt.SetVendor",
+                      "visible": true,
+                      "enabled": "businesspartner.ext.businessPartnerListExt.BusinessPartnerListExt.GetVendor",
+                      "requiresSelection": true,
+                      "text": "Set Vendor"
+                    },
+                    "BusinessPartnerListExt2": {
+                      "press": "businesspartner.ext.businessPartnerListExt.BusinessPartnerListExt.SetCustomer",
+                      "visible": true,
+                      "enabled":"businesspartner.ext.businessPartnerListExt.BusinessPartnerListExt.GetCustomer",
+                      "requiresSelection": true,
+                      "text": "Set Customer"
+                    }
                   }
                 }
               }
             }
           }
         },
-        "StoreObjectPage": {
+        "BuisinessPartnerObjectPage": {
           "type": "Component",
-          "id": "StoreObjectPage",
+          "id": "BuisinessPartnerObjectPage",
           "name": "sap.fe.templates.ObjectPage",
           "options": {
             "settings": {
+    
               "editableHeaderContent": false,
-              "contextPath": "/Store"
+              "contextPath": "/BuisinessPartner"
             }
           }
         }

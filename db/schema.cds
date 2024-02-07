@@ -53,3 +53,11 @@ entity Store: cuid, managed {
     pincode: String(10);
 }
 
+entity Stock: cuid, managed {
+    @title: 'Store ID'
+    store_id: String(23);
+        @title: 'Product ID'
+    product_id:String(5);
+        @title: 'Stock Quantity'
+    stock_qty: Integer;
+}

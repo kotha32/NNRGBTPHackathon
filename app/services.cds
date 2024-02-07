@@ -1,6 +1,6 @@
 
-using from './business/annotations';
+using from './businesspartner/annotations';
 
 using from './store/annotations';
 
-using from './states/annotations';
+using from './stock/annotations';
