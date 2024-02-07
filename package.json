@@ -22,6 +22,7 @@
   "sapux": [
     "app/business",
     "app/store",
-    "app/states"
+    "app/states",
+    "app/business"
   ]
 }
